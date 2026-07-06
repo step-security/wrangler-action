@@ -1,0 +1,81 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /dist
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /src/test/fixtures/build-quiet
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /src/test/fixtures/bun
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /src/test/fixtures/environment
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /src/test/fixtures/npm
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /src/test/fixtures/only-build
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /src/test/fixtures/pnpm
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /src/test/fixtures/pre-installed-wrangler/mock_packages/wrangler
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /src/test/fixtures/pre-installed-wrangler
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /src/test/fixtures/secrets-default
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /src/test/fixtures/secrets-v2
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /src/test/fixtures/specify-package-manager
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /src/test/fixtures/unspecified-package-manager
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /src/test/fixtures/yarn
+    schedule:
+      interval: daily
