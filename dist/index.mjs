@@ -63336,6 +63336,10 @@ async function installWrangler(config, packageManager) {
     throw new Error(`Failed to determine installed Wrangler version after installing wrangler@${config["WRANGLER_VERSION"]}`);
 }
 function authenticationSetup(config) {
+    if (config["CLOUDFLARE_API_TOKEN"])
+        (0,core.setSecret)(config["CLOUDFLARE_API_TOKEN"]);
+    if (config["CLOUDFLARE_ACCOUNT_ID"])
+        (0,core.setSecret)(config["CLOUDFLARE_ACCOUNT_ID"]);
     process.env.CLOUDFLARE_API_TOKEN = config["CLOUDFLARE_API_TOKEN"];
     process.env.CLOUDFLARE_ACCOUNT_ID = config["CLOUDFLARE_ACCOUNT_ID"];
 }

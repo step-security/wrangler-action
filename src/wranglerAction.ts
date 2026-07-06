@@ -5,6 +5,7 @@ import {
 	startGroup as originalStartGroup,
 	setFailed,
 	setOutput,
+	setSecret,
 } from "@actions/core";
 import { getExecOutput } from "@actions/exec";
 import semverSatisfies from "semver/functions/satisfies";
@@ -203,6 +204,9 @@ async function installWrangler(
 }
 
 function authenticationSetup(config: WranglerActionConfig) {
+	if (config["CLOUDFLARE_API_TOKEN"]) setSecret(config["CLOUDFLARE_API_TOKEN"]);
+	if (config["CLOUDFLARE_ACCOUNT_ID"])
+		setSecret(config["CLOUDFLARE_ACCOUNT_ID"]);
 	process.env.CLOUDFLARE_API_TOKEN = config["CLOUDFLARE_API_TOKEN"];
 	process.env.CLOUDFLARE_ACCOUNT_ID = config["CLOUDFLARE_ACCOUNT_ID"];
 }
